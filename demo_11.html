@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        ul,li{
+            list-style:none;
+        }
+        a{
+           text-decoration: none;
+        }
+        .wrap{
+            width:100%;
+            height:100%;
+            background-color:#fff;
+        }
+       .wrap .header-top{
+            width:100%;
+            height:30px;
+            background-color:#F7F7F7;
+            position: relative;
+        }
+        .wrap .header-top-left{
+            position: absolute;
+            top:-20px;
+            padding:5px 0;
+        }
+        .wrap .header-top .header-top-left li{
+            float:left;
+            margin:20px;
+        }
+        .wrap .header-top .header-top-left li a{
+            float:left;
+            font-size:14px;
+            color:black;
+        }
+        .wrap .header-top .header-top-right{
+            position:absolute;
+            right:50px;
+            margin-left:50px;
+        }
+        .wrap .header .header-top-right li{
+            float:right;
+            margin-left:15px;
+        }
+        .wrap .header .header-top-right li a{
+            float:right;
+            font-size:14px;
+            color:black;
+            padding-top:5px;
+        }
+        .wrap .header .header-bottom{
+            position: relative;
+            margin-top:20px;
+        }
+        .wrap .header .header-bottom img{
+            padding-left:20px;
+        }
+        .wrap .header .header-bottom .header-bottom-middle {
+            position: absolute;
+            left:30%;
+            top:-5px;
+            margin-left:30px;
+        }
+        input{
+            width:320px;
+            box-sizing:border-box;
+            border:1px solid #ccc;
+            padding:5px;
+            border-radius:3px;
+            font-size:14px;
+        }
+        .search{
+            width: 50px;
+            background-color: #428bca;
+            border-color: #357ebd;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 900;
+            font-size:125%
+        }
+       .header-bottom-middle-content{
+           position:absolute;
+           left:-8px;
+           margin:2px;
+        }
+        .header-bottom-middle-content li{
+            float:left;
+            margin-left:5px;
+            font-size:14px;
+        }
+        .header-bottom-middle-content li a{
+            float:left;
+            display:block;
+            height:10px;
+            line-height:10px;
+            padding-top:5px;
+        }
+        .header-bottom-right-button{
+            float:right;
+            position:absolute;
+            right:320px;
+            top:-5px;
+        }
+        .my-product{
+            width: 80px;
+            background-color: #428bca;
+            border-color: #357ebd;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 900;
+            font-size:125%
+        }
+        .my-car{
+            width:100px;
+            background-color: #428bca;
+            border-color: #357ebd;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 900;
+            font-size:125%;
+            margin-left:20px;
+        }
+        .header-bottom-right{
+            float:right;
+        }
+        .header-bottom-right{
+            width:200px;
+            margin:10px 0px 5px 80px;
+            position:relative;
+        }
+        .header-bottom-right span{
+            position:absolute;
+            left:20px;
+            top:80px;
+            font-size:10px;
+        }
+        .content{
+            width:1280px;
+            margin:0 auto;
+            margin-top:75px;
+        }
+        .content .nav{
+            background:#333333;
+            height:40px;
+        }
+        .content .nav .category{
+            width:245px;
+            background-color:#CD2A2C;
+            height:40px;
+            float:left;
+        }
+        .content .nav .category a{
+            display:inline-block;
+            height:40px;
+            padding-left:25px;
+            line-height:40px;
+            color:#fff;
+            font-size:14px;
+            font-weight:bold;
+        }
+        .content .nav .nav_items{
+            margin-left:35px;
+            float:left;
+        }
+        .content .nav  .nav_items li{
+            float:left;
+            height:40px;
+            padding:0 15px 0 55px;
+        }
+        .content .nav .nav_items li a{
+            height:40px;
+            width:85px;
+            text-align:center;
+            color:#fff;
+            font-size:14px;
+            line-height:40px;
+        }
+        .banner .product-box{
+            width:240px;
+            height:420px;
+            padding:4px 3px 3px 0;
+            background:#fff;
+            border-top-width:0px;
+            overflow:visible;
+            border:1px solid #ddddff;
+            float:left;
+            font: 12px "microsoft yahei",Arial,Helvetica,sans-serif;
+            color: #666;
+        }
+        .banner .product-box li{
+            margin-left:10px;
+            width:190px;
+            height:63px;
+        }
+
+        .slider img{
+            width:1035px;
+            height:429px;
+        }
+        .main{
+            width:1280px;
+            margin:0 auto;
+        }
+        .layout{
+            height:661px;
+            position:relative;
+        }
+        .layout .layout-1f{
+            height:302px;
+            float:left;
+        }
+        .clear{
+            clear:both;
+        }
+        .layout .layout-lf {
+            float: left;
+        }
+       .layout .layout-1f .layout-1f-child{
+           padding:10px;
+           width:490px;
+           height:310px;
+           position:relative;
+           float: left;
+       }
+        .layout .layout-1f .layout-bg-1{
+            background-color:#fff;
+        }
+        .layout .layout-1f .layout-bg-2{
+            background-color: #E2F9FB;
+        }
+        .layout .layout-1f .layout-bg-3{
+            background-color: #FFFCE7;
+        }
+        .layout .layout-1f .layout-bg-4{
+            background-color: #FFECEF;
+        }
+        .layout .layout-1f-child:hover{
+            border:1px solid pink;
+        }
+        .layout .layout-bg-1:hover{
+            border:none;
+        }
+        .layout .layout-1f .layout-1f-child .p-img{
+            padding:20px 30px 0 0;
+            float:left;
+        }
+        .layout .layout-1f .layout-1f-child .p-name{
+            margin:61px 32px 0 0;
+            padding-right:0;
+            font-size:25px;
+            line-height:1.3;
+            margin-bottom:258px;
+            float:right;
+            position:absolute;
+            left:200px;
+            top:20px;
+        }
+        .layout .layout-1f .layout-1f-child .p-intr{
+            font-size:15px;
+            line-height:22px;
+            position: absolute;
+            left:200px;
+            bottom:150px;
+        }
+        .layout .layout-1f .layout-1f-child .p-intr .p-slogan{
+            color:#777;
+            font-size:5px;
+            border-radius:5px;
+        }
+        .layout .layout-1f .layout-1f-child .p-intr .p-promotions{
+            margin-top:10px;
+            color:red;
+            font-size:15px;
+        }
+        .layout .layout-1f .layout-1f-child .p-price{
+            position:absolute;
+            left:200px;
+            bottom:80px;
+            font-size:20px;
+            color:red;
+            padding-top:30px;
+        }
+        .layout .layout-1f .layout-1f-child .p-button{
+            position:absolute;
+            left:300px;
+            bottom:80px;
+            color:#fff;
+            background-color:#d81b24;
+            border-color:#b3131a;
+            font-size:14px;
+            width:78px;
+            text-align:center;
+            border-width:3px;
+            height:30px;
+            line-height:30px;
+        }
+        .layout .layout-1f .layout-1f-child .p-button a{
+            color:#fff;
+            fot-weight:500;
+        }
+        .layout .layout-2f{
+            float: left;
+        }
+        .layout .layout-2f{
+            position:absolute;
+            top:1px;
+            right:-30px;
+            width:275px;
+            height:650px;
+            padding-right:15px;
+        }
+        .layout .layout-2f .tab{
+            height:328px;
+            border:1px solid #ddddff;
+            margin-top:15px;
+        }
+        .layout .layout-2f .tab li{
+            float:left;
+        }
+        .layout .layout-2f .tab>ul>li{
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            color:#838181;
+            background-color:#fff;
+            width:50%;
+            font-size:14px;
+        }
+        .layout .layout-2f .tab>ul>li.current{
+            background-color:red;
+        }
+        .layout .layout-2f .tab>ul>li:hover{
+           background-color:#7f7f9b;
+        }
+        .layout .layout-2f .tab ul.tab-content{
+            margin-top:20px;
+            padding-left:5px;
+        }
+        .layout .layout-2f .tab ul.tab-content li{
+            margin-top:5px;
+
+        }
+        .layout .layout-2f .tab ul.tab-content li a{
+            color:#00ffff;
+            font-size:14px;
+            overflow:hidden;
+            display: block;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            width:80px;
+        }
+        .bananer-img{
+            width:100%;
+            height:160px;
+            margin-top:20px;
+        }
+        .bananer-img img{
+            width:101%;
+        }
+        .chanel-floor{
+            margin:20px;
+        }
+        .chanel-floor-1{
+            padding-top:10px;
+            height:50px;
+        }
+        .chanel-floor-1-text-content{
+            padding:15px;
+            position:relative;
+        }
+        .chanel-floor-1 .chanel-floor-1-text-content .txt{
+            float:left;
+        }
+        .chanel-floor-1 .chanel-floor-1-text-content .txt h1{
+            font-size:18px;
+            font-weight:500;
+            border-left:4px solid #c82c2c;
+            padding-left:7px;
+            line-height:1.1;
+            float:left;
+        }
+        .chanel-floor-1 .chanel-floor-1-text-content .txt h1:hover{
+            color:red;
+        }
+        .chanel-floor-1 .chanel-floor-1-text-content .txt span{
+            float:left;
+            margin-left:20px;
+            color:#000;
+            font-size:12px;
+        }
+        .chanel-floor-1 .chanel-floor-1-text-content .menu ul{
+            position:absolute;
+            right:25px;
+        }
+        .chanel-floor-1 .chanel-floor-1-text-content .menu ul li{
+            float:right;
+        }
+        .chanel-floor-1 .chanel-floor-1-text-content .menu ul li{
+            margin-left:25px;
+        }
+        .chanel-floor-1 .chanel-floor-1-text-content .menu ul li a{
+            height:35px;
+            line-height:35px;
+            color:#2e6da4;
+            font-size:15px;
+            font-weight:500;
+        }
+        .chanel-floor-1 .chanel-floor-1-text-content .menu ul li a:hover{
+            text-decoration: underline;
+            color:orangered;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-first{
+            margin-top:10px;
+            position:relative;
+            height:323px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-first-col{
+            float:left;
+            border:1px solid #ddd;
+            width:635px;
+            height:323px;
+            background-color: #F6F6F6;
+            position:relative;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-first-col .p-img{
+            float:left;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-first-col .p-name{
+           position:absolute;
+            left:380px;
+            font-size:15px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-first-col .p-intr{
+            position: absolute;
+            left:380px;
+            top:120px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-first-col .p-intr .red{
+            color:red;
+            margin-top:10px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-first-col .p-price{
+            position: absolute;
+            left:380px;
+            top:200px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-first-col .p-price span{
+            color:red;
+            font-size:20px;
+            font-weight:500;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-first-col .p-price span.HUAWEIP9_P1{
+            width:50px;
+            height:30px;
+            border-radius:20px;
+            margin-left:15px;
+            padding:10px 10px;
+            background-color:#D81B24;
+            color:#fff;
+            font-size:20px;
+            font-weight:500;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second-col{
+            float:left;
+            width:320px;
+            height:323px;
+            border:1px solid #ddd;
+            background-color:#E2F9FB;
+            position:relative;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second-col .p-img{
+            float:left;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second-col .p-name{
+            position: absolute;
+            left:50px;
+            bottom:35px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second-col .p-intr{
+            position:absolute;
+            left:145px;
+            bottom:15px;
+            color:red;
+            text-align:center;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second-col .p-price{
+            position: absolute;
+            left:145px;
+            bottom:2px;
+            color:red;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-third-col{
+            float:left;
+            width:320px;
+            height:323px;
+            background-color:#FFECEF;
+            position:absolute;
+            left:960px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-third-col .p-img{
+            position:absolute;
+            top:70px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-third-col .p-name{
+            position:absolute;
+            top:275px;
+            left:45px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-third-col .p-intr
+        {
+            position:absolute;
+            top:275px;
+            left:150px;
+            color:red;
+            text-align:center;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-third-col .p-price{
+            position:absolute;
+            top:300px;
+            left:150px;
+            color:red;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second{
+            width:1280px;
+            height:323px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-first{
+            width:317px;
+            height:320px;
+            border:1px solid #ddd;
+            position:relative;
+            float:left;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-first .p-name{
+            position:absolute;
+            left:35px;
+            bottom:20px;
+            font-size:15px;
+            font-weight:500;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-first .p-intr{
+            position:absolute;
+            left:160px;
+            bottom:-2px;
+            text-align: center;
+            margin-left:10px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-first .p-price{
+            position: absolute;
+            left:120px;
+            bottom:-2px;
+            color:red;
+            font-size:15px;
+            font-weight:bold;
+            height:25px;
+            line-height:25px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-second{
+            float:left;
+            width:317px;
+            height:320px;
+            border:1px solid #ddd;
+            position:relative;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-second .p-img{
+            position:absolute;
+            top:70px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-second .p-name{
+            position:absolute;
+            top:280px;
+            left:50px;
+            color:red;
+            font-size: 15px;
+            font-weight:500;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-second .p-intr{
+            position:absolute;
+            top:280px;
+            left:110px;
+            color:red;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-second .p-price{
+            position:absolute;
+            top:300px;
+            left:110px;
+            color:red;
+            font-size:15px;
+            font-weight:bold;
+            margin-top:3px;
+
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-third{
+            float:left;
+            width:317px;
+            height:320px;
+            border:1px solid #ddd;
+            position:relative;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-third .p-img{
+            position: absolute;
+            top:80px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-third .p-name{
+            position:absolute;
+            top:280px;
+            left:50px;
+            margin-top:5px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-third .p-intr{
+            position:absolute;
+            top:280px;
+            left:100px;
+            margin-top:5px;
+            color:red;
+            font-size:15px;
+            font-weight:bold;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-third .p-price{
+            position:absolute;
+            top:300px;
+            left:100px;
+            margin-top:3px;
+            color:red;
+            font-size:15px;
+            font-weight:bold;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-forth{
+            float:left;
+            width:317px;
+            height:320px;
+            border:1px solid #ddd;
+            position: relative;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-forth .p-img{
+            position: absolute;
+            top:80px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-forth .p-name{
+            position:absolute;
+            top:280px;
+            left:50px;
+            margin-top:5px;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-forth .p-intr{
+            position:absolute;
+            top:280px;
+            left:100px;
+            margin-top:5px;
+            color:red;
+            font-size:15px;
+            font-weight:bold;
+        }
+        .chanel-floor-1 .chanel-floor-1-img-content-second .chanel-floor-img-content-second-col-forth .p-price{
+            position:absolute;
+            top:300px;
+            left:100px;
+            margin-top:3px;
+            color:red;
+            font-size:15px;
+            font-weight:bold;
+        }
+        .footer p{
+            margin:0 auto;
+            color:red;
+            font-size:50px;
+            font-weight:bold;
+            text-align:center;
+        }
+        .footer span{
+            display:block;
+            color:red;
+            font-size:50px;
+            font-weight:bold;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!--头部-->
+        <div class="header">
+            <!--头部----上-->
+            <div class="header-top">
+                <ul class="header-top-left">
+                    <li><a href="#">华为官网</a></li>
+                    <li><a href="#">华为荣耀</a></li>
+                    <li><a href="#">软件应用</a></li>
+                    <li><a href="#">花粉俱乐部</a></li>
+                    <li><a href="#">Select Region</a></li>
+                </ul>
+                <ul class="header-top-right">
+                    <li><a href="#">网站导航</a></li>
+                    <li><a href="#">手机版</a></li>
+                    <li><a href="#">V码（优购码）</a></li>
+                    <li><a href="#">我的订单</a></li>
+                    <li><a href="#">注册</a></li>
+                    <li><a href="#">登录</a></li>
+                </ul>
+            </div>
+            <!--头部----下-->
+            <div class="header-bottom">
+                <img src="imgs/image/newLogo.png" alt="">
+                <!--头部下中搜索-->
+                <div class="header-bottom-middle">
+                    <div class="header-bottom-middle-search">
+                        <input type="text">
+                        <button class="search">搜索</button>
+                    </div>
+                    <ul  class="header-bottom-middle-content">
+                        <li><a href="#">热门搜索</a></li>
+                        <li><a href="#">5C</a></li>
+                        <li><a href="#">HUAWEI P9</a></li>
+                        <li><a href="#">5X</a></li>
+                        <li><a href="#">荣耀7</a></li>
+                        <li><a href="#">Mate8</a></li>
+                    </ul>
+                </div>
+                <div class="header-bottom-right-button">
+                    <button class="my-product">我的商城</button>
+                    <button class="my-car">我的购物车</button>
+                </div>
+                <div class="header-bottom-right">
+                    <img src="imgs/weixin_app01.png" alt="">
+                    <span class="weixin">微信联系我们</span>
+                </div>
+            </div>
+        </div>
+        <!--内容-->
+        <div class="content">
+            <!--头部导航-->
+            <div class="nav">
+                <div class="category">
+                    <a href="#">全部商品</a>
+                </div>
+                <ul class="nav_items">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">华为专区</a></li>
+                    <li><a href="#">华为专区</a></li>
+                    <li><a href="#">华为专区</a></li>
+                    <li><a href="#">华为专区</a></li>
+                    <li><a href="#">华为专区</a></li>
+                    <li><a href="#">华为专区</a></li>
+                </ul>
+            </div>
+            <!--bananer-->
+            <div class="banner">
+                <!--导航-->
+                <ul class="product-box">
+                    <li>
+                        <h3><a href="#">手机</a></h3>
+                        <p>
+                            <span>荣耀</span>
+                            <span>畅玩</span>
+                            <span>华为</span>
+                            <span>Mate/p系列</span>
+                        </p>
+                    </li>
+                    <li>
+                        <h3><a href="#">平板 & 穿戴</a></h3>
+                        <p>
+                            <span>平板电脑</span>
+                            <span>手环</span>
+                            <span>手表</span>
+                        </p>
+                    </li>
+                    <li>
+                        <h3><a href="#">智能家居</a></h3>
+                        <p>
+                            <span>电力猫</span>
+                            <span>路由盒</span>
+                            <span>电视盒子</span>
+                        </p>
+                    </li>
+                    <li>
+                        <h3><a href="#">必备配件</a></h3>
+                        <p>
+                            <span>入耳式耳机</span>
+                            <span>保护壳</span>
+                            <span>保护套</span>
+                        </p>
+                    </li>
+                    <li>
+                        <h3><a href="#">潮流配件</a></h3>
+                        <p>
+                            <span>支架</span>
+                            <span>自拍杆/器</span>
+                            <span>智能开关/插座</span>
+                        </p>
+                    </li>
+                    <li>
+                        <h3><a href="#">应用市场</a></h3>
+                        <p>
+                            <span>手机应用</span>
+                            <span>手机游戏</span>
+                            <span>智能开关/插座</span>
+                        </p>
+                    </li>
+                </ul>
+                <!--轮播-->
+                <div class="slider" >
+                    <img src="imgs/slide01.png" alt="" id="slide_img">
+                </div>
+            </div>
+            <!--主体内容-->
+            <div class="main">
+                <div class="layout">
+                        <div class="layout-1f">
+                            <div class="layout-1f-child layout-bg-1">
+                                <div class="p-img">
+                                    <img src="imgs/phone01.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <a href="#">HUAWEI P9 PLUS</a>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="p-intr">
+                                    <div class="p-slogan">一上手，就爱不释手</div>
+                                    <div class="p-promotions">5月6日10:08 &nbsp;&nbsp;&nbsp;火爆开售</div>
+                                </div>
+                                <div class="p-price">
+                                    <em>￥</em>
+                                    <span>3988</span>
+                                </div>
+                                <div class="p-button">
+                                    <a href="#">立即抢购</a>
+                                </div>
+                            </div>
+                            <div class="layout-1f-child layout-bg-2">
+                                <div class="p-img">
+                                    <img src="imgs/phone02.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <a href="#">荣耀畅玩5C</a>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="p-intr">
+                                    <div class="p-slogan">16纳米8核芯千元普及风暴</div>
+                                    <div class="p-promotions">5月6日10:08 &nbsp;&nbsp;&nbsp;火爆开售</div>
+                                </div>
+                                <div class="p-price">
+                                    <em>￥</em>
+                                    <span>899</span>
+                                </div>
+                                <div class="p-button">
+                                    <a href="#">立即抢购</a>
+                                </div>
+                            </div>
+                            <div class="layout-1f-child layout-bg-3">
+                                <div class="p-img">
+                                    <img src="imgs/phone05.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <a href="#">荣耀7</a>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="p-intr">
+                                    <div class="p-slogan">智灵键，创新语音控制</div>
+                                    <div class="p-promotions">移动增强版原价1999直降200</div>
+                                </div>
+                                <div class="p-price">
+                                    <em>￥</em>
+                                    <span>1799</span>
+                                </div>
+                                <div class="p-button">
+                                    <a href="#">立即抢购</a>
+                                </div>
+                            </div>
+                            <div class="layout-1f-child layout-bg-4">
+                                <div class="p-img">
+                                    <img src="imgs/phone06.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <a href="#">荣耀畅玩5X</a>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="p-intr">
+                                    <div class="p-slogan">鹏讯视频VIP特权免费领</div>
+                                    <div class="p-promotions">5月4日至8日 &nbsp;&nbsp;&nbsp;准点开售</div>
+                                </div>
+                                <div class="p-price">
+                                    <em>￥</em>
+                                    <span>899</span>
+                                </div>
+                                <div class="p-button">
+                                    <a href="#">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="layout-2f">
+                        <div class="chanel-sale">
+                            <img src="imgs/phone03.jpg" alt="">
+                        </div>
+                        <div class="tab">
+                            <ul>
+                                <li class="current"><a href="#">公告</a></li>
+                                <li class="tab-news"><a href="#">评测</a></li>
+                                <div class="clear"></div>
+                                <ul class="tab-content">
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                    <li><a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a></li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--bananer图-->
+                <div class="bananer-img">
+                    <img src="imgs/p9.jpg" alt="">
+                </div>
+                <!--产品-->
+                <div class="chanel-floor">
+                    <div class="chanel-floor-1">
+                        <div class="chanel-floor-1-text-content">
+                            <div class="txt">
+                                <h1>平板 & 穿戴</h1>
+                                <span>华为精品平板</span>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="#">运营商合约</a></li>
+                                    <li><a href="#">G/Y系列</a></li>
+                                    <li><a href="#">华为Mate/P系列</a></li>
+                                    <li><a href="#">畅玩</a></li>
+                                    <li><a href="#">荣耀</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--产品介绍---bananer-->
+                        <div class="chanel-floor-1-img-content-first">
+                            <!--第一列-->
+                            <div class="chanel-floor-1-img-content-first-col">
+                                <div class="p-hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone09.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <h1>HUAWEI P9</h1>
+                                </div>
+                                <div class="p-intr">
+                                    <p>瞬间，定在视界的角度</p>
+                                    <p class="red">全款预售，火爆进行中</p>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>3188</span>
+                                    <span class="HUAWEIP9_P1">
+                                        立即购买
+                                    </span>
+                                </div>
+                            </div>
+                            <!--第二列-->
+                            <div class="chanel-floor-1-img-content-second-col">
+                                <div class="p-hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone08.png" alt="">
+                                </div>
+                                <div class="clear"></div>
+                                <div class="p-name">
+                                    <p>荣耀畅玩4C</p>
+                                </div>
+                                <div class="p-intr">
+                                    <p>可领50元劵&送手机壳+膜</p>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>799</span>
+                                </div>
+                            </div>
+                            <!--第三列-->
+                            <div class="chanel-floor-1-img-content-third-col">
+                                <div class="p-img">
+                                    <img src="imgs/phone11png.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>荣耀畅玩4X</p>
+                                </div>
+                                <div class="p-intr">
+                                    <p class="red">千万人之选，火爆热销</p>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>799</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <!--第二行-->
+                        <div class="chanel-floor-1-img-content-second">
+                            <!--第一列-->
+                            <div class="chanel-floor-img-content-second-col-first">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>HUAWEI MATE&nbsp;&nbsp;&nbsp;8</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone12.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>高性能与长期续航的再次突破</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第二列-->
+                            <div class="chanel-floor-img-content-second-col-second">
+                                <div class="p-name">
+                                    <p>荣耀4A&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone14.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>青春优等生，火爆销售中</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第三列-->
+                            <div class="chanel-floor-img-content-second-col-third">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>荣耀7i&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>全网通/移动版直降200 ！</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1399</span>
+                                </div>
+                            </div>
+                            <!--第四列-->
+                            <div class="chanel-floor-img-content-second-col-forth">
+                                <div class="p-name">
+                                    <p>荣耀X2&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>母亲节促销最高减200</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1799</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--第三行-->
+                        <!--第三行-->
+                        <div class="chanel-floor-1-img-content-second">
+                            <!--第一列-->
+                            <div class="chanel-floor-img-content-second-col-first">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>HUAWEI MATE&nbsp;&nbsp;&nbsp;8</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone12.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>高性能与长期续航的再次突破</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第二列-->
+                            <div class="chanel-floor-img-content-second-col-second">
+                                <div class="p-name">
+                                    <p>荣耀4A&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone14.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>青春优等生，火爆销售中</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第三列-->
+                            <div class="chanel-floor-img-content-second-col-third">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>荣耀7i&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>全网通/移动版直降200 ！</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1399</span>
+                                </div>
+                            </div>
+                            <!--第四列-->
+                            <div class="chanel-floor-img-content-second-col-forth">
+                                <div class="p-name">
+                                    <p>荣耀X2&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>母亲节促销最高减200</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1799</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--第四行-->
+                        <div class="chanel-floor-1-img-content-second">
+                            <!--第一列-->
+                            <div class="chanel-floor-img-content-second-col-first">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>HUAWEI MATE&nbsp;&nbsp;&nbsp;8</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone12.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>高性能与长期续航的再次突破</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第二列-->
+                            <div class="chanel-floor-img-content-second-col-second">
+                                <div class="p-name">
+                                    <p>荣耀4A&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone14.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>青春优等生，火爆销售中</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第三列-->
+                            <div class="chanel-floor-img-content-second-col-third">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>荣耀7i&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>全网通/移动版直降200 ！</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1399</span>
+                                </div>
+                            </div>
+                            <!--第四列-->
+                            <div class="chanel-floor-img-content-second-col-forth">
+                                <div class="p-name">
+                                    <p>荣耀X2&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>母亲节促销最高减200</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1799</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--第五行-->
+                        <div class="chanel-floor-1-img-content-second">
+                            <!--第一列-->
+                            <div class="chanel-floor-img-content-second-col-first">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>HUAWEI MATE&nbsp;&nbsp;&nbsp;8</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone12.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>高性能与长期续航的再次突破</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第二列-->
+                            <div class="chanel-floor-img-content-second-col-second">
+                                <div class="p-name">
+                                    <p>荣耀4A&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone14.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>青春优等生，火爆销售中</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第三列-->
+                            <div class="chanel-floor-img-content-second-col-third">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>荣耀7i&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>全网通/移动版直降200 ！</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1399</span>
+                                </div>
+                            </div>
+                            <!--第四列-->
+                            <div class="chanel-floor-img-content-second-col-forth">
+                                <div class="p-name">
+                                    <p>荣耀X2&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>母亲节促销最高减200</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1799</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--第六行-->
+                        <div class="chanel-floor-1-img-content-second">
+                            <!--第一列-->
+                            <div class="chanel-floor-img-content-second-col-first">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>HUAWEI MATE&nbsp;&nbsp;&nbsp;8</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone12.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>高性能与长期续航的再次突破</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第二列-->
+                            <div class="chanel-floor-img-content-second-col-second">
+                                <div class="p-name">
+                                    <p>荣耀4A&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone14.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>青春优等生，火爆销售中</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第三列-->
+                            <div class="chanel-floor-img-content-second-col-third">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>荣耀7i&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>全网通/移动版直降200 ！</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1399</span>
+                                </div>
+                            </div>
+                            <!--第四列-->
+                            <div class="chanel-floor-img-content-second-col-forth">
+                                <div class="p-name">
+                                    <p>荣耀X2&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>母亲节促销最高减200</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1799</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--第七行-->
+                        <div class="chanel-floor-1-img-content-second">
+                            <!--第一列-->
+                            <div class="chanel-floor-img-content-second-col-first">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>HUAWEI MATE&nbsp;&nbsp;&nbsp;8</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone12.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>高性能与长期续航的再次突破</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第二列-->
+                            <div class="chanel-floor-img-content-second-col-second">
+                                <div class="p-name">
+                                    <p>荣耀4A&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone14.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>青春优等生，火爆销售中</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第三列-->
+                            <div class="chanel-floor-img-content-second-col-third">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>荣耀7i&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>全网通/移动版直降200 ！</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1399</span>
+                                </div>
+                            </div>
+                            <!--第四列-->
+                            <div class="chanel-floor-img-content-second-col-forth">
+                                <div class="p-name">
+                                    <p>荣耀X2&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>母亲节促销最高减200</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1799</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--第八行-->
+                        <div class="chanel-floor-1-img-content-second">
+                            <!--第一列-->
+                            <div class="chanel-floor-img-content-second-col-first">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>HUAWEI MATE&nbsp;&nbsp;&nbsp;8</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone12.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>高性能与长期续航的再次突破</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第二列-->
+                            <div class="chanel-floor-img-content-second-col-second">
+                                <div class="p-name">
+                                    <p>荣耀4A&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/phone14.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>青春优等生，火爆销售中</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>2999</span>
+                                </div>
+                            </div>
+                            <!--第三列-->
+                            <div class="chanel-floor-img-content-second-col-third">
+                                <div class="p_hot">
+                                    <img src="imgs/hot_but.png" alt="">
+                                </div>
+                                <div class="p-name">
+                                    <p>荣耀7i&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>全网通/移动版直降200 ！</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1399</span>
+                                </div>
+                            </div>
+                            <!--第四列-->
+                            <div class="chanel-floor-img-content-second-col-forth">
+                                <div class="p-name">
+                                    <p>荣耀X2&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="p-img">
+                                    <img src="imgs/1455415746352.png" alt="">
+                                </div>
+                                <div class="p-intr">
+                                    <span>母亲节促销最高减200</span>
+                                </div>
+                                <div class="p-price">
+                                    <span>￥</span>
+                                    <span>1799</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <p>欢迎购买</p>
+                            <span>联系人：舒勇&nbsp;&nbsp;&nbsp;联系电话：18382821090</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    var imgArr = [
+        "imgs/slide01.png",
+        "imgs/slide02.jpg",
+        "imgs/slide03.jpg",
+        "imgs/slide04.jpg"
+    ];
+    var count = 0;
+    var timer;
+    function change(){
+        var img = document.getElementById("slide_img");
+        img.src = imgArr[count];
+
+        if(count === imgArr.length-1)
+        {
+            count = 0;
+        }
+        else
+        {
+            count ++;
+        }
+
+    }
+    function move(){
+        timer = setInterval(change,2000);
+    }
+    window.onload = move();
+</script>
+</html>

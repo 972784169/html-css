@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏布局</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        body{
+            background:black;
+        }
+        /*主面板样式*/
+        #container {
+            width:980px;
+            margin:0px auto;/*主面板DIV居中*/
+
+        }
+        /*顶部面板样式*/
+        #header {
+            width:100%;
+            height:150px;
+            background:transparent url("imgs/1.jpg") repeat-x fixed top;
+            position:relative;
+        }
+        .left{
+            width:100px;
+            padding:9px 11px;
+            position:absolute;
+            left:200px;
+        }
+        img{
+            display:inline-block;
+            width:100px;
+            height:100px;
+        }
+        .middle{
+            position:absolute;
+            left:35%;
+            top:50px;
+            margin:15px;
+            padding:9px 11px;
+        }
+        .middle h1{
+            font-style:italic;
+            font-size:15px;
+            color:#fff;
+            text-indent: 2em;
+            position:relative;
+            left:-12%;
+        }
+        .middle input{
+            height:25px;
+            padding: 4px 10px;
+            width: 100px;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            background: #44bbff;
+            color: #FFFFFF;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .middle button{
+            background-color: #4CAF50; /* Green */
+            border-radius: 5px;
+            color: white;
+            width:100px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            line-height:25px;
+            padding-top:5px;
+            margin-left:25px;:
+
+        }
+        .right{
+            padding-top:10px;
+            position:absolute;
+            top:5px;
+            right:10px;
+        }
+        .right ul{
+            list-style:none;
+        }
+        .right ul li{
+            float:left;
+
+        }
+        .right ul li a{
+            display:block;
+            float:left;
+            margin:5px;
+            border-right:1px solid #fff;
+            padding:3px;
+            color:#fff;
+        }
+
+        /*中间部分面板样式*/
+        #main {
+            width:100%;
+            height:600px;
+            border:1px #F00 solid;
+        }
+        .cat{
+            width:240px;
+            height:100%;
+            border:1px #F00 solid;
+            float:left;
+        }
+        .cat ul{
+            list-style:none;
+            border-top:none;
+            padding-top:2px;
+            padding-bottom:3px;
+            background-color:#fff;
+        }
+        .cat ul li{
+            overflow:hidden;
+            line-height:18px;
+            height:19px;
+            padding-left:25px;
+            padding-right:19px;
+            position:relative;
+            font-size:14px;
+            font-weight:400;
+            width:145px;
+            color:#666;
+        }
+        .cat ul li a{
+            color:pink;
+        }
+        .content{
+            width:494px;
+            height:100%;
+            border:1px #F00 solid;
+            float:left;
+            padding-left:5px;
+        }
+        .content ul{
+            list-style:none;
+        }
+        .content ul li{
+            float:left;
+            margin:10px;
+        }
+        .content ul li a{
+            display: block;
+            padding-left:25px;
+            text-decoration: none;
+            color:#fff;
+        }
+        .content ul li a p{
+            text-align: center;
+            margin-top:5px;
+        }
+        .sidebar{
+            width:235px;
+            height:100%;
+            border:1px #F00 solid;
+            float:left;
+        }
+        /*底部面板样式*/
+        #footer {
+            width:100%;
+            height:100px;
+            border:1px #F00 solid;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <!--左侧logo-->
+        <div class="left">
+            <img src="imgs/logo.png" alt="">
+        </div>
+        <!--中间搜索框-->
+        <div class="middle">
+            <h1>vue-element-admin</h1>
+            <div class="search">
+                <input type="text">
+                <button >查询</button>
+            </div>
+        </div>
+        <!--右侧列表-->
+        <div class="right">
+            <ul>
+                <li><a href="#">登录</a></li>
+                <li><a href="#">注册</a></li>
+                <li><a href="#">退出</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">简介</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main">
+        <div class="cat">
+            <ul>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">鞋靴</a>
+                    <a href="#">箱包</a>
+                    <a href="#">配件</a>
+                </li>
+                <li>
+                    <a href="#">童装玩具</a>
+                    <a href="#">孕产</a>
+                    <a href="#">用品</a>
+                </li>
+                <li>
+                    <a href="#">家电</a>
+                    <a href="#">数码</a>
+                    <a href="#">手机</a>
+                </li>
+                <li>
+                    <a href="#">美妆</a>
+                    <a href="#">洗护</a>
+                    <a href="#">保健品</a>
+                </li>
+                <li>
+                    <a href="#">美妆</a>
+                    <a href="#">洗护</a>
+                    <a href="#">保健品</a>
+                </li>
+                <li>
+                    <a href="#">珠宝</a>
+                    <a href="#">眼镜</a>
+                    <a href="#">手表</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">鞋靴</a>
+                    <a href="#">箱包</a>
+                    <a href="#">配件</a>
+                </li>
+                <li>
+                    <a href="#">童装玩具</a>
+                    <a href="#">孕产</a>
+                    <a href="#">用品</a>
+                </li>
+                <li>
+                    <a href="#">家电</a>
+                    <a href="#">数码</a>
+                    <a href="#">手机</a>
+                </li>
+                <li>
+                    <a href="#">美妆</a>
+                    <a href="#">洗护</a>
+                    <a href="#">保健品</a>
+                </li>
+                <li>
+                    <a href="#">珠宝</a>
+                    <a href="#">眼镜</a>
+                    <a href="#">手表</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">鞋靴</a>
+                    <a href="#">箱包</a>
+                    <a href="#">配件</a>
+                </li>
+                <li>
+                    <a href="#">美妆</a>
+                    <a href="#">洗护</a>
+                    <a href="#">保健品</a>
+                </li>
+                <li>
+                    <a href="#">珠宝</a>
+                    <a href="#">眼镜</a>
+                    <a href="#">手表</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">鞋靴</a>
+                    <a href="#">箱包</a>
+                    <a href="#">配件</a>
+                </li>
+                <li>
+                    <a href="#">珠宝</a>
+                    <a href="#">眼镜</a>
+                    <a href="#">手表</a>
+                </li>
+                <li>
+                    <a href="#">女装</a>
+                    <a href="#">男装</a>
+                    <a href="#">内衣</a>
+                </li>
+                <li>
+                    <a href="#">鞋靴</a>
+                    <a href="#">箱包</a>
+                    <a href="#">配件</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="content">
+            <!--5块-->
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+            </ul>
+            <!--5块-->
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+            </ul>
+            <!--5块-->
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+            </ul>
+            <!--5块-->
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="imgs/3.jpg" alt="">
+                        <p>美女</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar">右侧(sidebar)</div>
+        主体部分（main）
+    </div>
+    <div id="footer">
+        底部（footer）
+    </div>
+</div>
+</body>
+</html>
