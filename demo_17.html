@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercies响应式</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        .wrap{
+            width:auto;
+            height:auto;
+        }
+        .wrap .header{
+            width:1190px;
+            height:80px;
+            margin:0 auto;
+            background-color:#090359;
+        }
+        .wrap .menu{
+            width:1190px;
+            height:32px;
+            margin:0 auto;
+            background-color:#E3E4E5;
+        }
+        .wrap .logoSearch{
+            width:1190px;
+            height:138px;
+            margin:0 auto;
+            background-color:red;
+        }
+        .wrap .logoSearch .logo{
+            width:190px;
+            height:138px;
+            background-color:yellow;
+            float:left;
+        }
+        .wrap .logoSearch .search{
+            width:1000px;
+            height:138px;
+            background-color:green;
+            float:left;
+        }
+        .wrap .main{
+            width:1190px;
+            height:340px;
+            margin:0 auto;
+        }
+        .wrap .main .main-left{
+            width:190px;
+            height:340px;
+            background-color:black;
+            float:left;
+        }
+        .wrap .main .main-middle{
+            width:790px;
+            height:340px;
+            background-color:red;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .main .main-right{
+            width:190px;
+            height:340px;
+            background-color:pink;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .time{
+            width:1190px;
+            height:304px;
+            margin:0 auto;
+            margin-top:10px;
+        }
+        .wrap .time .time-top{
+            width:1190px;
+            height:55px;
+            background-color:red;
+        }
+        .wrap .time .time-bottom{
+            width:1190px;
+            height:249px;
+        }
+        .wrap .time .time-bottom .time-bottom-first{
+            width:190px;
+            height:249px;
+            background-color:yellow;
+            float:left;
+        }
+        .wrap .time .time-bottom .time-bottom-second{
+            width:190px;
+            height:249px;
+            background-color:green;
+            margin-left:10px;
+            float:left;
+        }
+        .wrap .time .time-bottom .time-bottom-third{
+            width:190px;
+            height:249px;
+            background-color:red;
+            margin-left:10px;
+            float:left;
+        }
+        .wrap .time .time-bottom .time-bottom-forth{
+            width:190px;
+            height:249px;
+            background-color:purple;
+            margin-left:10px;
+            float:left;
+        }
+        .wrap .time .time-bottom .time-bottom-fifth{
+            width:190px;
+            height:249px;
+            background-color:lightskyblue;
+            margin-left:10px;
+            float:left;
+        }
+        .wrap .time .time-bottom .time-bottom-sixth{
+            width:190px;
+            height:249px;
+            background-color:lightpink;
+            margin-left:10px;
+            float:left;
+        }
+        .wrap .good{
+            width:1190px;
+            height:471px;
+            margin:0 auto;
+            margin-top:10px;
+        }
+        .wrap .good .good-left{
+            width:390px;
+            height:471px;
+            background-color:red;
+            float:left;
+        }
+        .wrap .good .good-left .good-left-top{
+            width:390px;
+            height:56px;
+            background-color:lightgreen;
+        }
+        .wrap .good .good-left .good-left-bottom{
+            width:390px;
+            height:415px;
+            background-color:blue;
+        }
+        .wrap .good .good-middle{
+            width:390px;
+            height:471px;
+            background-color:purple;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .good .good-middle .good-middle-top{
+            width:390px;
+            height:56px;
+            background-color:skyblue;
+        }
+        .wrap .good .good-middle .good-middle-bottom{
+            width:390px;
+            height:415px;
+            background-color:blue;
+        }
+        .wrap .good .good-right{
+            width:390px;
+            height:471px;
+            background-color:yellow;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .good .good-right .good-right-top{
+            width:390px;
+            height:56px;
+            background-color:lightcoral;
+        }
+        .wrap .good .good-right .good-right-bottom{
+            width:390px;
+            height:415px;
+            background-color:blue;
+        }
+        .wrap .juan{
+            width:1190px;
+            height:216px;
+            margin:0 auto;
+            margin-top:10px;
+        }
+        .wrap .juan .juan-first{
+            width:190px;
+            height:216px;
+            background-color:red;
+            float:left;
+
+        }
+        .wrap .juan .juan-second{
+            width:199px;
+            height:196px;
+            background-color:green;
+            float:left;
+            margin-top:20px;
+        }
+        .wrap .juan .juan-third{
+            width:199px;
+            height:196px;
+            background-color:blue;
+            float:left;
+            margin-top:20px;
+        }
+        .wrap .juan .juan-forth{
+            width:199px;
+            height:196px;
+            background-color:red;
+            float:left;
+            margin-top:20px;
+        }
+        .wrap .juan .juan-fifth{
+            width:199px;
+            height:196px;
+            background-color:pink;
+            float:left;
+            margin-top:20px;
+        }
+        .wrap .juan .juan-sixth{
+            width:190px;
+            height:196px;
+            background-color:skyblue;
+            float:right;
+            margin-top:20px;
+        }
+        .wrap .bananer{
+            width:1190px;
+            height:100px;
+            background-color:#ddd;
+            margin:0 auto;
+            margin-top:10px;
+        }
+        .wrap .bananer .bananer-left{
+            width:390px;
+            height:100px;
+            background-color:orange;
+            float:left;
+        }
+        .wrap .bananer .bananer-middle{
+            width:390px;
+            height:100px;
+            background-color:red;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .bananer .bananer-right{
+            width:390px;
+            height:100px;
+            background-color:green;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .share{
+            width:1190px;
+            height:588px;
+            margin:0 auto;
+            margin-top:10px;
+        }
+        .wrap .share .share-left{
+            width:390px;
+            height:588px;
+            float:left;
+        }
+        .wrap .share .share-left .share-left-top{
+            width:390px;
+            height:190px;
+            background-color:green;
+        }
+        .wrap .share .share-left .share-left-middle{
+            width:390px;
+            height:190px;
+            background-color:pink;
+            margin-top:10px;
+        }
+        .wrap .share .share-left .share-left-bottom{
+            width:390px;
+            height:190px;
+            background-color:black;
+            margin-top:10px;
+        }
+        .wrap .share .share-middle{
+            width:390px;
+            height:588px;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .share .share-middle .share-middle-top{
+            width:390px;
+            height:190px;
+            background-color:green;
+        }
+        .wrap .share .share-middle .share-middle-middle{
+            width:390px;
+            height:190px;
+            background-color:pink;
+            margin-top:10px;
+        }
+        .wrap .share .share-middle .share-middle-bottom{
+            width:390px;
+            height:190px;
+            background-color:black;
+            margin-top:10px;
+        }
+        .wrap .share .share-right{
+            width:390px;
+            height:588px;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .share .share-right .share-right-top{
+            width:390px;
+            height:390px;
+            background-color:blue;
+        }
+        .wrap .share .share-right .share-right-bottom{
+            width:390px;
+            height:188px;
+            margin-top:10px;
+        }
+        .wrap .share .share-right .share-right-bottom .share-right-bottom-left{
+            width:190px;
+            height:188px;
+            background-color:yellow;
+            float:left;
+        }
+        .wrap .share .share-right .share-right-bottom .share-right-bottom-right{
+            width:190px;
+            height:188px;
+            background-color:blue;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .life{
+            width:1190px;
+            height:522px;
+            margin:0 auto;
+            margin-top:10px;
+        }
+        .wrap .life .life-left{
+            width:590px;
+            height:522px;
+            float:left;
+        }
+        .wrap .life .life-left .life-left-top{
+            width:590px;
+            height:60px;
+            background-color:red;
+        }
+        .wrap .life .life-left .life-left-middle{
+            width:590px;
+            height:390px;
+            margin-top:6px;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-left{
+            width:190px;
+            height:390px;
+            float:left;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-left .life-left-middle-left-top{
+            width:190px;
+            height:240px;
+            background-color:yellow;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-left .life-left-middle-left-bottom{
+            width:190px;
+            height:140px;
+            background-color:blue;
+            margin-top:10px;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-middle{
+            width:190px;
+            height:390px;
+            background-color:yellow;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-middle .life-left-middle-middle-top{
+            width:190px;
+            height:130px;
+            background-color:red;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-middle .life-left-middle-middle-middle{
+            width:190px;
+            height:130px;
+            background-color:green;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-middle .life-left-middle-middle-bottom{
+            width:190px;
+            height:130px;
+            background-color:blue;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-right{
+            width:190px;
+            height:390px;
+            background-color:black;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-right .life-left-middle-right-top{
+            width:190px;
+            height:130px;
+            background-color:red;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-right .life-left-middle-right-middle{
+            width:190px;
+            height:130px;
+            background-color:green;
+        }
+        .wrap .life .life-left .life-left-middle .life-left-middle-right .life-left-middle-right-bottom{
+            width:190px;
+            height:130px;
+            background-color:blue;
+        }
+        .wrap .life .life-left .life-left-bottom{
+            width:590px;
+            height:60px;
+            margin-top:6px;
+        }
+        .wrap .life .life-left .life-left-bottom .life-left-bottom-first{
+            width:95px;
+            height:60px;
+            background-color:red;
+            float:left;
+        }
+        .wrap .life .life-left .life-left-bottom .life-left-bottom-second{
+            width:95px;
+            height:60px;
+            background-color:yellow;
+            float:left;
+        }
+        .wrap .life .life-left .life-left-bottom .life-left-bottom-third{
+            width:95px;
+            height:60px;
+            background-color:blue;
+            float:left;
+            margin-left:5px;
+        }
+        .wrap .life .life-left .life-left-bottom .life-left-bottom-forth{
+            width:95px;
+            height:60px;
+            background-color:pink;
+            float:left;
+            margin-left:5px;
+        }
+        .wrap .life .life-left .life-left-bottom .life-left-bottom-fifth{
+            width:95px;
+            height:60px;
+            background-color:black;
+            float:left;
+            margin-left:5px;
+        }
+        .wrap .life .life-left .life-left-bottom .life-left-bottom-sixth{
+            width:95px;
+            height:60px;
+            background-color:lightcoral;
+            float:left;
+            margin-left:5px;
+        }
+        .wrap .life .life-right{
+            width:590px;
+            height:522px;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .life .life-right .life-right-top{
+            width:590px;
+            height:60px;
+            background-color:red;
+        }
+        .wrap .life .life-right .life-right-middle{
+            width:590px;
+            height:390px;
+            background-color:#fff;
+            margin-top:6px;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-left{
+            width:190px;
+            height:390px;
+            float:left;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-left .life-right-middle-left-top{
+            width:190px;
+            height:240px;
+            background-color:yellow;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-left .life-right-middle-left-bottom{
+            width:190px;
+            height:140px;
+            background-color:blue;
+            margin-top:10px;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-middle{
+            width:190px;
+            height:390px;
+            background-color:yellow;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-middle .life-right-middle-middle-top{
+            width:190px;
+            height:130px;
+            background-color:red;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-middle .life-right-middle-middle-middle{
+            width:190px;
+            height:130px;
+            background-color:green;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-middle .life-right-middle-middle-bottom{
+            width:190px;
+            height:130px;
+            background-color:blue;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-right{
+            width:190px;
+            height:390px;
+            background-color:black;
+            float:left;
+            margin-left:10px;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-right .life-right-middle-right-top{
+            width:190px;
+            height:130px;
+            background-color:red;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-right .life-right-middle-right-middle{
+            width:190px;
+            height:130px;
+            background-color:green;
+        }
+        .wrap .life .life-right .life-right-middle .life-right-middle-right .life-right-middle-right-bottom{
+            width:190px;
+            height:130px;
+            background-color:blue;
+        }
+        .wrap .life .life-right .life-right-bottom{
+            width:590px;
+            height:60px;
+            margin-top:6px;
+        }
+        .wrap .life .life-right .life-right-bottom .life-right-bottom-first{
+            width:95px;
+            height:60px;
+            background-color:red;
+            float:left;
+        }
+        .wrap .life .life-right .life-right-bottom .life-right-bottom-second{
+            width:95px;
+            height:60px;
+            background-color:yellow;
+            float:left;
+        }
+        .wrap .life .life-right .life-right-bottom .life-right-bottom-third{
+            width:95px;
+            height:60px;
+            background-color:blue;
+            float:left;
+            margin-left:5px;
+        }
+        .wrap .life .life-right .life-right-bottom .life-right-bottom-forth{
+            width:95px;
+            height:60px;
+            background-color:pink;
+            float:left;
+            margin-left:5px;
+        }
+        .wrap .life .life-right .life-right-bottom .life-right-bottom-fifth{
+            width:95px;
+            height:60px;
+            background-color:black;
+            float:left;
+            margin-left:5px;
+        }
+        .wrap .life .life-right .life-right-bottom .life-right-bottom-sixth{
+            width:95px;
+            height:60px;
+            background-color:lightcoral;
+            float:left;
+            margin-left:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!--头部-->
+        <div class="header"></div>
+        <!--登录及导航-->
+        <div class="menu"></div>
+        <!--logo和搜索-->
+        <div class="logoSearch">
+            <div class="logo"></div>
+            <div class="search"></div>
+        </div>
+        <!--导航及轮播-->
+        <div class="main">
+            <div class="main-left"></div>
+            <div class="main-middle"></div>
+            <div class="main-right"></div>
+        </div>
+        <!--京东秒杀-->
+        <div class="time">
+            <div class="time-top"></div>
+            <div class="time-bottom">
+                <div class="time-bottom-first"></div>
+                <div class="time-bottom-second"></div>
+                <div class="time-bottom-third"></div>
+                <div class="time-bottom-forth"></div>
+                <div class="time-bottom-fifth"></div>
+                <div class="time-bottom-sixth"></div>
+            </div>
+        </div>
+        <!--good-->
+        <div class="good">
+            <div class="good-left">
+                <div class="good-left-top"></div>
+                <div class="good-left-bottom"></div>
+            </div>
+            <div class="good-middle">
+                <div class="good-middle-top"></div>
+                <div class="good-middle-bottom"></div>
+            </div>
+            <div class="good-right">
+                <div class="good-right-top"></div>
+                <div class="good-right-bottom"></div>
+            </div>
+        </div>
+        <!--领劵中心-->
+        <div class="juan">
+            <div class="juan-first"></div>
+            <div class="juan-second"></div>
+            <div class="juan-third"></div>
+            <div class="juan-forth"></div>
+            <div class="juan-fifth"></div>
+            <div class="juan-sixth"></div>
+        </div>
+        <!--bananer图-->
+        <div class="bananer">
+            <div class="bananer-left"></div>
+            <div class="bananer-middle"></div>
+            <div class="bananer-right"></div>
+        </div>
+        <!--享品质-->
+        <div class="share">
+            <div class="share-left">
+                <div class="share-left-top"></div>
+                <div class="share-left-middle"></div>
+                <div class="share-left-bottom"></div>
+            </div>
+            <div class="share-middle">
+                <div class="share-middle-top"></div>
+                <div class="share-middle-middle"></div>
+                <div class="share-middle-bottom"></div>
+            </div>
+            <div class="share-right">
+                <div class="share-right-top"></div>
+                <div class="share-right-bottom">
+                    <div class="share-right-bottom-left"></div>
+                    <div class="share-right-bottom-right"></div>
+                </div>
+            </div>
+        </div>
+        <!--爱生活-->
+        <div class="life">
+            <div class="life-left">
+                <div class="life-left-top"></div>
+                <div class="life-left-middle">
+                    <div class="life-left-middle-left">
+                        <div class="life-left-middle-left-top"></div>
+                        <div class="life-left-middle-left-bottom"></div>
+                    </div>
+                    <div class="life-left-middle-middle">
+                        <div class="life-left-middle-middle-top"></div>
+                        <div class="life-left-middle-middle-middle"></div>
+                        <div class="life-left-middle-middle-bottom"></div>
+                    </div>
+                    <div class="life-left-middle-right">
+                        <div class="life-left-middle-right-top"></div>
+                        <div class="life-left-middle-right-middle"></div>
+                        <div class="life-left-middle-right-bottom"></div>
+                    </div>
+                </div>
+                <div class="life-left-bottom">
+                    <div class="life-left-bottom-first"></div>
+                    <div class="life-left-bottom-second"></div>
+                    <div class="life-left-bottom-third"></div>
+                    <div class="life-left-bottom-forth"></div>
+                    <div class="life-left-bottom-fifth"></div>
+                    <div class="life-left-bottom-sixth"></div>
+                </div>
+            </div>
+            <div class="life-right">
+                <div class="life-right-top"></div>
+                <div class="life-right-middle">
+                    <div class="life-right-middle-left">
+                        <div class="life-right-middle-left-top"></div>
+                        <div class="life-right-middle-left-bottom"></div>
+                    </div>
+                    <div class="life-right-middle-middle">
+                        <div class="life-right-middle-middle-top"></div>
+                        <div class="life-right-middle-middle-middle"></div>
+                        <div class="life-right-middle-middle-bottom"></div>
+                    </div>
+                    <div class="life-right-middle-right">
+                        <div class="life-right-middle-right-top"></div>
+                        <div class="life-right-middle-right-middle"></div>
+                        <div class="life-right-middle-right-bottom"></div>
+                    </div>
+                </div>
+                <div class="life-right-bottom">
+                    <div class="life-right-bottom-first"></div>
+                    <div class="life-right-bottom-second"></div>
+                    <div class="life-right-bottom-third"></div>
+                    <div class="life-right-bottom-forth"></div>
+                    <div class="life-right-bottom-fifth"></div>
+                    <div class="life-right-bottom-sixth"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>
