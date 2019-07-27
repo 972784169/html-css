@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .content{
+            width:960px;
+            height:500px;
+            margin:0 auto;
+            position: relative;
+        }
+        .inr{
+            height:50px;
+            background-color:#ddd;
+            font-size:14px;
+            color:#fff;
+            line-height:50px;
+            margin-left:50px;
+        }
+        input[type="button"]{
+            position:absolute;
+            left:650px;
+            top:10px
+        }
+        table{
+            width:480px;
+            heigth:440px;
+            margin-top:10px;
+            margin-left:50px;
+        }
+        .red{
+            background: red;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+
+        var people = [
+            {name:"舒勇",age:26,sex:"男",hobby:"篮球",health:"良好",married:"未婚"},
+            {name:"余京川",age:25,sex:"男",hobby:"篮球",health:"良好",married:"未婚"},
+            {name:"王麒麟",age:26,sex:"男",hobby:"篮球",health:"良好",married:"已婚"},
+            {name:"黄林",age:26,sex:"男",hobby:"篮球",health:"良好",married:"已婚"},
+            {name:"陈坜凯",age:30,sex:"男",hobby:"篮球",health:"良好",married:"已婚"},
+            {name:"罗洪",age:26,sex:"男",hobby:"篮球",health:"良好",married:"未婚"},
+            {name:"梁宏伟",age:26,sex:"男",hobby:"篮球",health:"良好",married:"未婚"},
+        ];
+        $(function(){
+            $("input").click(function(){
+                var html = "";
+                for(var i=0;i<people.length;i++)
+                {
+                    if(people[i].married =="未婚")
+                    {
+                        html += `<tr  class="red" align="center">`;
+                        html += `<td>${people[i].name}</td>`;
+                        html += `<td>${people[i].age}</td>`;
+                        html += `<td>${people[i].sex}</td>`;
+                        html += `<td>${people[i].hobby}</td>`;
+                        html += `<td>${people[i].health}</td>`;
+                        html += `<td>${people[i].married}</td>`;
+                        html += `</tr>`;
+                    }
+                    else
+                    {
+                        html += `<tr  align="center">`;
+                        html += `<td>${people[i].name}</td>`;
+                        html += `<td>${people[i].age}</td>`;
+                        html += `<td>${people[i].sex}</td>`;
+                        html += `<td>${people[i].hobby}</td>`;
+                        html += `<td>${people[i].health}</td>`;
+                        html += `<td>${people[i].married}</td>`;
+                        html += `</tr>`;
+                    }
+
+                }
+                //console.log(html);
+                $("tbody").html(html);
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="inr">生成数据</div>
+        <input type="button" value="生成数据">
+         <table border="1px solid yellow">
+             <thead align="center">
+                <tr>
+                    <td>姓名</td>
+                    <td>年龄</td>
+                    <td>sex</td>
+                    <td>hobby</td>
+                    <td>health</td>
+                    <td>married</td>
+                </tr>
+             </thead>
+             <tbody>
+
+             </tbody>
+
+         </table>
+    </div>
+</body>
+</html>

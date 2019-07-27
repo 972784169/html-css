@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡事件流</title>
+    <style>
+        div{
+            margin:20px;
+            border:1px solid blue;
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">div1
+        <div class="div2">div2
+            <div class="div3">div3
+                <div class="div4">div4
+                    <div class="div5">
+                        div5
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="show"></p>
+</body>
+<script>
+    var div = document.getElementsByTagName('div');
+    var show = document.getElementsByClassName('show')[0];
+    function double(){
+        for(var i=0;i<div.length;i++)
+        {
+            div[i].onclick=(function(i){
+                return function(e){
+                    e.stopPropagation();
+                    div[i].style.border="1px dashed red";
+                    show.innerHTML+=div[i].className+">";
+                }
+            }(i))
+        }
+
+    }
+
+    window.onload = double;
+</script>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        ul,li{
+            list-style:none;
+        }
+        a{
+            text-decoration:underline;
+        }
+        .wrap{
+            width:auto;
+            height:auto;
+        }
+        .header{
+            width:960px;
+            height:150px;
+            background-color:red;
+            margin:0 auto;
+        }
+        .content{
+            width:960px;
+            height:1500px;
+            margin:0 auto;
+            margin-top:10px;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+        }
+        .content-1{
+            width:760px;
+            height:800px;
+        }
+        .content-1 .content-1-top{
+            width:760px;
+            height:400px;
+            display: flex;
+            justify-content:space-between;
+
+        }
+        .content-1 .content-1-top .content-1-top-left{
+            width:250px;
+            height:400px;
+            background-color:yellow;
+        }
+        .content-1 .content-1-top .content-1-top-middle{
+            width:245px;
+            height:400px;
+            background-color:blue;
+        }
+        .content-1 .content-1-top .content-1-top-right{
+            width:245px;
+            height:400px;
+            background-color:green;
+        }
+        .content-1 .content-1-middle{
+            width:760px;
+            height:190px;
+            margin-top:10px;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+        }
+        .content-1 .content-1-middle .content-1-middle-first{
+            width:145px;
+            height:90px;
+            background-color:red;
+        }
+        .content-1 .content-1-middle .content-1-middle-second{
+            width:145px;
+            height:90px;
+            background-color:yellow;
+        }
+        .content-1 .content-1-middle .content-1-middle-third{
+            width:145px;
+            height:90px;
+            background-color:red;
+        }
+        .content-1 .content-1-middle .content-1-middle-forth{
+            width:145px;
+            height:90px;
+            background-color:yellow;
+        }
+        .content-1 .content-1-middle .content-1-middle-fifth{
+            width:145px;
+            height:90px;
+            background-color:red;
+        }
+        .content-1 .content-1-middle .content-1-middle-sixth{
+            width:145px;
+            height:95px;
+            background-color:yellow;
+            margin-top:10px;
+        }
+        .content-1 .content-1-middle .content-1-middle-seventh{
+            width:145px;
+            height:90px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-middle .content-1-middle-eighth{
+            width:145px;
+            height:90px;
+            background-color:yellow;
+            margin-top:10px;
+        }
+        .content-1 .content-1-middle .content-1-middle-ninth{
+            width:145px;
+            height:90px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-middle .content-1-middle-tenth{
+            width:145px;
+            height:90px;
+            background-color:yellow;
+            margin-top:10px;
+        }
+        .content-1 .content-1-bottom{
+            width:760px;
+            height:190px;
+            margin-top:10px;
+        }
+        .content-1 .content-1-bottom .content-1-bottom-top{
+            width:760px;
+            height:90px;
+            background-color:yellow;
+        }
+        .content-1 .content-1-bottom .content-1-bottom-bottom{
+            width:760px;
+            height:90px;
+            margin-top:10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .content-1 .content-1-bottom .content-1-bottom-bottom .content-1-bottom-bottom-left{
+            width:250px;
+            height:90px;
+            background-color:yellow;
+        }
+        .content-1 .content-1-bottom .content-1-bottom-bottom .content-1-bottom-bottom-middle{
+            width:250px;
+            height:90px;
+            background-color:green;
+        }
+        .content-1 .content-1-bottom .content-1-bottom-bottom .content-1-bottom-bottom-right{
+            width:250px;
+            height:90px;
+            background-color:blue;
+        }
+        .content-2{
+            width:190px;
+            height:800px;
+            margin-left:10px;
+            background-color:red;
+        }
+        .content-3{
+            width:150px;
+            height:340px;
+            background-color:lightgreen;
+            margin-top:10px;
+        }
+        .content-4{
+            width:150px;
+            height:340px;
+            background-color:lightslategray;
+            margin-top:10px;
+        }
+        .content-5{
+            width:150px;
+            height:340px;
+            background-color:lightsalmon;
+            margin-top:10px;
+        }
+        .content-6{
+            width:150px;
+            height:340px;
+            background-color:lightseagreen;
+            margin-top:10px;
+        }
+        .content-7{
+            width:150px;
+            height:340px;
+            background-color:lightpink;
+            margin-top:10px;
+        }
+        .content-8{
+            width:150px;
+            height:340px;
+            background-color:lightcoral;
+            margin-top:10px;
+        }
+        .content-9{
+            width:150px;
+            height:340px;
+            background-color:lightskyblue;
+            margin-top:10px;
+        }
+        .content-10{
+            width:150px;
+            height:340px;
+            background-color:lightgoldenrodyellow;
+            margin-top:10px;
+        }
+        .content-11{
+            width:150px;
+            height:340px;
+            background-color:lightcyan;
+            margin-top:10px;
+        }
+        .content-12{
+            width:150px;
+            height:340px;
+            background-color:lightgreen;
+            margin-top:10px;
+        }
+        .content-13{
+            width:150px;
+            height:340px;
+            background-color:lightcyan;
+            margin-top:10px;
+        }
+        .content-14{
+            width:150px;
+            height:340px;
+            background-color:lightgreen;
+            margin-top:10px;
+        }
+        .footer{
+            width:960px;
+            height:150px;
+            background-color:black;
+            margin:0 auto;
+            margin-top:10px
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header"></div>
+        <div class="content">
+            <div class="content-1">
+                <div class="content-1-top">
+                    <div class="content-1-top-left"></div>
+                    <div class="content-1-top-middle"></div>
+                    <div class="content-1-top-right"></div>
+                </div>
+                <div class="content-1-middle">
+                    <div class="content-1-middle-first"></div>
+                    <div class="content-1-middle-second"></div>
+                    <div class="content-1-middle-third"></div>
+                    <div class="content-1-middle-forth"></div>
+                    <div class="content-1-middle-fifth"></div>
+                    <div class="content-1-middle-sixth"></div>
+                    <div class="content-1-middle-seventh"></div>
+                    <div class="content-1-middle-eighth"></div>
+                    <div class="content-1-middle-ninth"></div>
+                    <div class="content-1-middle-tenth"></div>
+                </div>
+                <div class="content-1-bottom">
+                    <div class="content-1-bottom-top"></div>
+                    <div class="content-1-bottom-bottom">
+                        <div class="content-1-bottom-bottom-left"></div>
+                        <div class="content-1-bottom-bottom-middle"></div>
+                        <div class="content-1-bottom-bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-2"></div>
+            <div class="content-3"></div>
+            <div class="content-4"></div>
+            <div class="content-5"></div>
+            <div class="content-6"></div>
+            <div class="content-7"></div>
+            <div class="content-8"></div>
+            <div class="content-9"></div>
+            <div class="content-10"></div>
+            <div class="content-11"></div>
+            <div class="content-12"></div>
+            <div class="content-13"></div>
+            <div class="content-14"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>

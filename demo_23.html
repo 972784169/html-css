@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab切换</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab原生</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        ul,li{
+            list-style:none;
+        }
+        .tab_wrap{
+            width:auto;
+        }
+        ul.tab{
+            height:24px;
+        }
+        ul.tab li{
+            float:left;
+            padding:1em;
+            height:24px;
+            cursor:pointer;
+            font-size:14px;
+        }
+        .normal{
+            color:#1f3a87;
+            background:#fff;
+            border:1px solid #26f2ff;
+            border-bottom:0;
+        }
+        .hover{
+            color:#1f3a87;
+            font-weight:bold;
+            background:#e6f2ff;
+            border:1px solid #26f2ff;
+            border-bottom:0;
+        }
+        .content{
+            height:auto;
+            padding:6px;
+            clear:both;
+            background:#e6f2ff;
+            text-align:left;
+        }
+    </style>
+</head>
+<body>
+<div class="tab_wrap">
+    <ul class="tab" >
+        <li id="tab_1">Tab1</li>
+        <li id="tab_2">Tab2</li>
+        <li id="tab_3">Tab3</li>
+    </ul>
+    <div class="content" >
+        <img src="imgs/images/54d9ef34N7cc61f4c.jpg!q90.jpg" alt="" id="img">
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    var imgs = [
+        "imgs/images/54d9ef34N7cc61f4c.jpg!q90.jpg",
+        "imgs/images/57d6820aN3ebcb677.jpg!q90.jpg",
+        "imgs/images/57f9fa89N6ddb14fc.jpg!q90.jpg"
+    ];
+        var li = document.getElementsByTagName("li");
+        console.log(li);
+        var img = document.getElementById("img");
+        for(var i=0;i<li.length;i++)
+        {
+            li[i].onmouseover=(function(i){
+               return function(){
+                   $(this).addClass("hover").siblings().removeClass("hover");
+                   img.src = imgs[i]
+               }
+            })(i)
+        }
+
+
+</script>
+</html>
+</body>
+</html>

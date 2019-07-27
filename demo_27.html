@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        dl{
+            width:400px;
+            border:1px solid #ccc;
+            font-size:12px;
+        }
+        dt{
+            background-color:#ddd;
+            color:#71790c;
+            height:28px;
+            line-height:28px;
+            padding-left:1em;
+            border-bottom:1px solid #efefef;
+            cursor:pointer;
+        }
+        dd{
+            padding:2px 4px;
+            margin:0;
+        }
+        img{
+            width:200px;
+            height:200px;
+        }
+        .expand{
+            ovrflow:visible;
+        }
+        .collapse{
+            height:28px;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <dl class="expand" >
+        <dt onclick="Switch()">标题</dt>
+        <dd>折叠区域
+            <img src="imgs/1.jpg" alt="">
+        </dd>
+    </dl>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    /*function Switch(dt){
+        var dl = dt.parentNode;
+        console.log(dl);
+        $dl=$(dl);
+        if($dl.hasClass("expand")){
+            $(dl).removeClass("expand").addClass("collapse");
+        }
+        else if($dl.hasClass("collapse"))
+        {
+            $(dl).removeClass("collapse").addClass("expand");
+        }
+    }*/
+    function Switch(){
+        $("img").slideToggle("slow");
+    }
+</script>
+</html>

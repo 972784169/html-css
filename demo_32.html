@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,ul,li,div{
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        ul,li{
+            list-style:none;
+        }
+        .f-l{
+            float:left;
+        }
+        .f-r{
+            float:right;
+        }
+        .main {
+            margin-top: 10px;
+            height: 40px;
+            background-color: #ddd;
+        }
+        .con{
+            width:960px;
+            height:40px;
+            margin:0 auto;
+            background-color:yellow;
+        }
+        .con-l{
+            float:left;
+            height:40px;
+            line-height:40px;
+        }
+
+
+        .f-r ul{
+            height:40px;
+        }
+        .f-r ul li{
+            float:left;
+            height:40px;
+        }
+        .f-r ul li a{
+            display:inline-block;
+            height:40px;
+            line-height:40px;
+            padding:0 12px;
+            color:#fff;
+        }
+        .f-r ul li a:hover{
+            background-color:blue;
+        }
+        .yellow
+        {
+            background-color:yellow;
+        }
+        .blue{
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <table bgcolor="green" cellspacing="1" align="center" width="500" height="500">
+        <caption>表头</caption>
+        <thead align="center"  bgcolor="white">
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>职位</td>
+            </tr>
+        </thead>
+        <tbody align="center" bgcolor="white">
+            <tr>
+                <td>舒勇</td>
+                <td>26</td>
+                <td>男</td>
+                <td>工程师</td>
+            </tr>
+            <tr>
+                <td>舒勇</td>
+                <td>26</td>
+                <td>男</td>
+                <td>工程师</td>
+            </tr>
+            <tr>
+                <td>舒勇</td>
+                <td>26</td>
+                <td>男</td>
+                <td>工程师</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="main">
+        <div class="con">
+            <div class="f-l con-l">欢迎来到舒勇的WEB网站</div>
+            <div class="f-r">
+                <ul>
+                    <li><a href="8">工程师</a></li>
+                    <li><a href="8">工程师</a></li>
+                    <li><a href="8">工程师</a></li>
+                    <li><a href="8">工程师</a></li>
+                    <li><a href="8">工程师</a></li>
+                    <li><a href="8">工程师</a></li>
+                    <li><a href="8">工程师</a></li>
+                    <li><a href="8">工程师</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    用户名:<input type="checkbox" id="all"><br><br>
+    <div id="child">
+        密码:<input type="checkbox">
+        密码:<input type="checkbox">
+        密码:<input type="checkbox">
+        密码:<input type="checkbox">
+        密码:<input type="checkbox">
+    </div>
+    <button class="">点击</button>
+    <ul></ul>
+    <br>
+
+    <div id="off" style="width:50px;height:300px;background-color: yellow">
+        12345654897456
+    </div>
+
+</body>
+
+
+<script>
+    for(var i=1;i<=9;i++)
+    {
+        for(var j=1;j<=i;j++)
+        {
+            document.write(j+"*"+i+"="+j*i+"&nbsp;");
+        }
+        document.write("<br>");
+    }
+
+
+
+
+    function sum(a,b)
+    {
+        return a+b;
+
+    }
+    var a=sum(1,2);
+    console.log(a);
+
+
+
+    function getMax(arr){
+       var newArr = [];
+       for(var i=1;i<arr.length;i++)
+       {
+           newArr[newArr.length] = arr[arr.length-i];
+       }
+       return newArr;
+    }
+    var max=[2,3,10,5,8];
+    console.log(max[length]);
+
+
+   function sun(a,b)
+   {
+       console.log(arguments[0]);
+   }
+    sun(1,2)
+
+
+    function get(str){
+       var obj = {};
+       for(var i =0;i<str.length;i++)
+       {
+           if(obj[str.charAt(i)])
+           {
+               obj[str.charAt(i)]++;
+           }
+           else
+           {
+               obj[str.charAt(i)]=1;
+           }
+       }
+       var num = "";
+       var count = 0;
+       for(var key in obj)
+       {
+           if(obj[key]>count)
+           {
+               num = key;
+               count = obj[key]
+           }
+       }
+
+       return "出现最多的是"+num+",出现的次数是"+count+"次"
+    }
+  console.log(get("dddddddaaaabbbcc"));
+
+    console.log(document.getElementsByClassName("f-l")[0].parentNode.children[0]);
+    //console.log(document.getElementsByClassName("con")[0].parentNode);
+
+
+    var inp = document.getElementsByTagName("input")[0];
+    var btn = document.getElementsByTagName("button")[0];
+    inp.onfocus=function(){
+        this.setAttribute("placeholder","")
+    }
+    inp.onblur = function(){
+        this.setAttribute("placeholder","请输入用户名")
+    }
+
+
+    var all = document.getElementById("all");
+    var child = document.getElementById("child");
+    var chk = child.getElementsByTagName("input");
+    console.log(chk);
+    all.onclick = function(){
+        for(var i=0;i<chk.length;i++)
+        {
+            chk[i].checked = this.checked;
+        }
+    }
+
+    for(var i=0;i<chk.length;i++)
+    {
+        chk[i].onclick=function () {
+            var bool = true;
+            console.log(111);
+            for(var j=0;j<chk.length;j++)
+            {
+                if(chk[j].checked==false)
+                {
+                    bool=false;
+                }
+            }
+            all.checked=bool;
+        }
+    }
+
+
+
+
+    var btn = document.getElementsByTagName("button")[0];
+    var ul = document.getElementsByTagName("ul")[0];
+    var arr = ["shuyong",26,"nan","gongchengshi"];
+     btn.onclick=function () {
+         for(var i=0;i<arr.length;i++)
+         {
+             var li = document.createElement("li");
+             li.innerHTML = arr[i];
+             ul.appendChild(li);
+         }
+         var li = ul.children;
+         console.log(li);
+         for(var j=0;j<li.length;j++)
+         {
+             li[j].onmouseover=function () {
+                 for(var k=0;k<li.length;k++)
+                 {
+                     li[k].style.backgroundColor="";
+                 }
+                 this.style.backgroundColor = "red";
+             }
+         }
+         for(var a=0;a<li.length;a++)
+         {
+             li[a].onmouseout=function () {
+                 for(var b=0;b<li.length;b++)
+                 {
+                     li[b].style.backgroundColor="";
+                 }
+                 this.style.backgroundColor="";
+             }
+         }
+     }
+
+
+     var off = document.getElementById("off");
+     console.log(off.offsetWidth);
+    console.log(off.offsetHeight);
+    console.log(off.scrollWidth);
+</script>
+
+
+
+</html>

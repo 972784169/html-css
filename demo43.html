@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        div,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .header {
+            height: 50px;
+            background: #ddd;
+        }
+
+        .header_inner {
+            width: 960px;
+            height: 50px;
+            margin: 0 auto;
+            background: skyblue;
+        }
+
+        .intr {
+            height: 50px;
+            line-height: 50px;
+            float: left;
+        }
+
+        .list {
+            float: right;
+            height: 50px;
+        }
+
+        .list li {
+            float: left;
+            height: 50px;
+        }
+
+        .list li a {
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 15px;
+        }
+
+        .main {
+            width: 960px;
+            margin: 10px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        .content_first {
+            width: 780px;
+            height: 300px;
+            background: red;
+        }
+        .content_first img{
+            width: 780px;
+            height: 300px;
+        }
+        .content_second {
+            width: 170px;
+            height: 300px;
+        }
+        .content_second .image{
+            width:150px;
+            height:250px;
+            margin:0px 10px;
+        }
+        .content_second .image img{
+            width:150px;
+            height:250px;
+        }
+        .content_second .hot{
+            margin-top:10px;
+            height:40px;
+            line-height:40px;
+            text-align:center;
+            color:#ddd;
+        }
+        .content_third {
+            width: 150px;
+            height: 190px;
+            margin-top: 10px;
+        }
+
+        .content_third .image {
+            width: 150px;
+            height: 150px;
+        }
+
+        .content_third img {
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+        }
+
+        .content_third .phone {
+            width: 150px;
+            height: 30px;
+            margin-top: 10px;
+            line-height: 30px;
+            text-align: center;
+
+        }
+        .footer{
+            height:50px;
+            background: #ddd;
+        }
+        .footer_inner{
+            width:960px;
+            height:50px;
+            margin:0 auto;
+            background: skyblue;
+        }
+        .people{
+            color:#fff;
+            height:50px;
+            line-height:50px;
+            float:left;
+        }
+        .phone_number{
+            float:right;
+            color:#fff;
+            height:50px;
+            line-height:50px;
+        }
+    </style>
+
+<script>
+    var count=0;
+    function change(){
+        var imgArr=[
+            "imgs/slide01.png",
+            "imgs/slide02.jpg",
+            "imgs/slide03.jpg",
+            "imgs/slide04.jpg",
+            "imgs/slide05.jpg"
+        ]
+        var img = document.getElementById("img");
+        img.src = imgArr[count];
+
+        if(count === imgArr.length-1)
+        {
+            count = 0;
+        }
+        else
+        {
+            count ++;
+        }
+
+    }
+        window.onload=function(){
+            setInterval(() => {
+                change()
+            }, 1000);
+            
+        }
+        
+ </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_inner">
+            <div class="intr">欢迎来到我的网站</div>
+            <ul class="list">
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">公司介绍</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content_first">
+            <img src="imgs/slide01.png" alt="" id="img">
+        </div>
+        <div class="content_second">
+            <div class="image">
+                <img src="imgs/1454136259058.png" alt="">
+                 <div class="hot">热销产品</div>
+            </div>
+        </div>
+        <div class="content_third">
+            <div class="image">
+                <img src="imgs/008.png" alt="">
+                <p class="phone">小米手机</p>
+            </div>
+        </div>
+        <div class="content_third">
+            <div class="image">
+                <img src="imgs/1447211984495.png" alt="">
+                <p class="phone">小米手机</p>
+            </div>
+        </div>
+        <div class="content_third">
+            <div class="image">
+                <img src="imgs/1460019221135.png" alt="">
+                <p class="phone">小米手机</p>
+            </div>
+        </div>
+        <div class="content_third">
+            <div class="image">
+                <img src="imgs/phone01.png" alt="">
+                <p class="phone">小米手机</p>
+            </div>
+        </div>
+        <div class="content_third">
+            <div class="image">
+                <img src="imgs/phone02.png" alt="">
+                <p class="phone">小米手机</p>
+            </div>
+        </div>
+        <div class="content_third">
+            <div class="image">
+                <img src="imgs/phone01.png" alt="">
+                <p class="phone">小米手机</p>
+            </div>
+        </div>
+        <div class="content_third">
+                <div class="image">
+                    <img src="imgs/008.png" alt="">
+                    <p class="phone">小米手机</p>
+                </div>
+            </div>
+            <div class="content_third">
+                <div class="image">
+                    <img src="imgs/1447211984495.png" alt="">
+                    <p class="phone">小米手机</p>
+                </div>
+            </div>
+            <div class="content_third">
+                <div class="image">
+                    <img src="imgs/1460019221135.png" alt="">
+                    <p class="phone">小米手机</p>
+                </div>
+            </div>
+            <div class="content_third">
+                <div class="image">
+                    <img src="imgs/phone01.png" alt="">
+                    <p class="phone">小米手机</p>
+                </div>
+            </div>
+            <div class="content_third">
+                <div class="image">
+                    <img src="imgs/phone02.png" alt="">
+                    <p class="phone">小米手机</p>
+                </div>
+            </div>
+            <div class="content_third">
+                <div class="image">
+                    <img src="imgs/phone01.png" alt="">
+                    <p class="phone">小米手机</p>
+                </div>
+            </div>
+            <div class="content_third">
+                    <div class="image">
+                        <img src="imgs/008.png" alt="">
+                        <p class="phone">小米手机</p>
+                    </div>
+                </div>
+                <div class="content_third">
+                    <div class="image">
+                        <img src="imgs/1447211984495.png" alt="">
+                        <p class="phone">小米手机</p>
+                    </div>
+                </div>
+                <div class="content_third">
+                    <div class="image">
+                        <img src="imgs/1460019221135.png" alt="">
+                        <p class="phone">小米手机</p>
+                    </div>
+                </div>
+                <div class="content_third">
+                    <div class="image">
+                        <img src="imgs/phone01.png" alt="">
+                        <p class="phone">小米手机</p>
+                    </div>
+                </div>
+                <div class="content_third">
+                    <div class="image">
+                        <img src="imgs/phone02.png" alt="">
+                        <p class="phone">小米手机</p>
+                    </div>
+                </div>
+                <div class="content_third">
+                    <div class="image">
+                        <img src="imgs/phone01.png" alt="">
+                        <p class="phone">小米手机</p>
+                    </div>
+                </div>
+                <div class="content_third">
+                        <div class="image">
+                            <img src="imgs/008.png" alt="">
+                            <p class="phone">小米手机</p>
+                        </div>
+                    </div>
+                    <div class="content_third">
+                        <div class="image">
+                            <img src="imgs/1447211984495.png" alt="">
+                            <p class="phone">小米手机</p>
+                        </div>
+                    </div>
+                    <div class="content_third">
+                        <div class="image">
+                            <img src="imgs/1460019221135.png" alt="">
+                            <p class="phone">小米手机</p>
+                        </div>
+                    </div>
+                    <div class="content_third">
+                        <div class="image">
+                            <img src="imgs/phone01.png" alt="">
+                            <p class="phone">小米手机</p>
+                        </div>
+                    </div>
+                    <div class="content_third">
+                        <div class="image">
+                            <img src="imgs/phone02.png" alt="">
+                            <p class="phone">小米手机</p>
+                        </div>
+                    </div>
+                    <div class="content_third">
+                        <div class="image">
+                            <img src="imgs/phone01.png" alt="">
+                            <p class="phone">小米手机</p>
+                        </div>
+                    </div>
+                    <div class="content_third">
+                            <div class="image">
+                                <img src="imgs/008.png" alt="">
+                                <p class="phone">小米手机</p>
+                            </div>
+                        </div>
+                        <div class="content_third">
+                            <div class="image">
+                                <img src="imgs/1447211984495.png" alt="">
+                                <p class="phone">小米手机</p>
+                            </div>
+                        </div>
+                        <div class="content_third">
+                            <div class="image">
+                                <img src="imgs/1460019221135.png" alt="">
+                                <p class="phone">小米手机</p>
+                            </div>
+                        </div>
+                        <div class="content_third">
+                            <div class="image">
+                                <img src="imgs/phone01.png" alt="">
+                                <p class="phone">小米手机</p>
+                            </div>
+                        </div>
+                        <div class="content_third">
+                            <div class="image">
+                                <img src="imgs/phone02.png" alt="">
+                                <p class="phone">小米手机</p>
+                            </div>
+                        </div>
+                        <div class="content_third">
+                            <div class="image">
+                                <img src="imgs/phone01.png" alt="">
+                                <p class="phone">小米手机</p>
+                            </div>
+                        </div>
+                                                
+    </div>
+
+    <div class="footer">
+        <div class="footer_inner">
+            <div class="people">
+                联系人：舒勇
+            </div>
+            <div class="phone_number">18382821090</div>
+        </div>
+    </div>
+
+
+
+    
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+
+
+<script>
+    $(".list").on("click","li a",(e)=>{
+        console.log(e)
+    })
+</script>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .content {
+            width: 960px;
+            margin: 10px auto;
+        }
+
+        .con-first {
+            width: 780px;
+            height: 400px;
+            background: #ddd;
+            float: left;
+        }
+
+        .con-second {
+            width: 170px;
+            height: 400px;
+            background: red;
+            float: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .con-third {
+            width: 148px;
+            height: 200px;
+           background: yellow;
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+        .con-third:hover{
+            border:1px solid #ddd;
+        }
+        .con-third .image{
+            background: red;
+            overflow:hidden;
+        }
+        .con-third img{
+        
+            height:150px;
+        }
+        .phone{
+           height:40px;
+           line-height:40px;
+           text-align: center;
+        }
+        .con-third:nth-child(3) {
+            margin-left: 0px;
+        }
+
+        .con-third:last-child {
+            margin-left: 10px;
+        }
+
+
+        .clear{
+            clear:both;
+        }
+
+        .content-box{
+        box-sizing:content-box;
+        -moz-box-sizing:content-box;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 5px solid #E6A43F;
+        background: blue;
+    }
+    .padding-box{
+        box-sizing:padding-box;
+        -moz-box-sizing:padding-box;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 5px solid #186645;
+        background: red;                
+    }
+    .border-box{
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 5px solid #3DA3EF;
+        background: yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="con-first"></div>
+        <div class="con-second"></div>
+        <div class="con-third">
+            <div class="image">
+                <img src="imgs/008.png" alt="">
+                <p class="phone">小米手机</p>
+            </div>
+        </div>
+        <div class="con-third"></div>
+        <div class="con-third"></div>
+        <div class="con-third"></div>
+        <div class="con-third"></div>
+        <div class="con-third"></div>
+        <div class="clear"></div>
+    </div>
+
+
+
+<div class="content-box"></div>
+
+<div class="padding-box"></div>
+<div class="border-box">ertretretfdgfdgfdgfdgte</div>
+</body>
+
+</html>
+
+
+
+
+

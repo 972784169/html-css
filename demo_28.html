@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js实现天猫首页菜单效果</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        body,html{
+            background:#e3e3e3;
+            font:16px Microsoft YaHei,arial,sans-serif;
+        }
+        ul{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        a{
+            text-decoration:underline;
+        }
+        .container{
+            width:1000px;
+            height:auto;
+            position:relative;
+            margin:0 auto;
+            top:50px;
+            background-color:yellow;
+        }
+        .nav_left{
+            width:200px;
+            height:500px;
+            background:#ff0036;
+            float:left;
+        }
+        .nav_left ul{
+            width:100%;
+            height:auto;
+            background:blue;
+        }
+        .nav_left ul li{
+            height:50px;
+            line-height:50px;
+            text-align:left;
+        }
+        .nav_left ul li span{
+            padding-left:10px;
+            height:50px;
+            line-height:50px;
+            display:block;
+            background:#ff0036;
+            color:#fff;
+        }
+        .nav_left ul li span:hover{
+            color:#ff0036;
+            background:#ffffff;
+        }
+        .nav_right{
+            width:800px;
+            height:500px;
+            background-color:black;
+            float:left;
+        }
+        .sub{
+            position:relative;
+            overflow:hidden;
+            width:100%;
+            height:480px;
+            background:#fff;
+            padding:10px 0px;
+        }
+        .sub dl{
+            overflow:hidden;
+            padding:0px 0px 10px 0px;
+        }
+        .sub dt{
+            width:100px;
+            float:left;
+            display:block;
+            position:relative;
+            clear:left;
+        }
+        .sub dt i{
+            width:4px;
+            position:absolute;
+            right:12px;
+            top:2px;
+            font-size:14px;
+            font-style:normal;
+        }
+        .sub dd{
+            width:680px;
+            float:left;
+            display:block;
+            position:relative;
+            overflow:hidden;
+            padding-right:20px;
+            border-bottom:1px dashed #e3e3e3;
+        }
+        .sub dd a {
+            font-size: 12px;
+            float: left;
+            color: #666;
+            padding: 0 10px;
+            margin: 4px 0px 10px 0px;
+            text-decoration: none;
+            cursor: pointer;
+            border-left: 1px solid #E3E3E3;
+        }
+
+        .sub dd a:hover {
+            color: #FF0036;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav_left">
+            <ul>
+                <li  data-id="1"><span>美妆/个人护理</span></li>
+                <li  data-id="2"><span>手机 /数码 /电脑办公</span></li>
+                <li  data-id="3"><span>零食 /茶酒 /进口食品 </span></li>
+                <li  data-id="4"><span>母婴玩具</span></li>
+                <li  data-id="5"><span>腕表 /眼镜 /珠宝饰品 </span></li>
+                <li  data-id="6"><span>大家电 /生活电器</span></li>
+                <li  data-id="7"><span>厨具 /收纳 /宠物</span></li>
+                <li  data-id="8"><span>汽车 /配件 /用品</span></li>
+                <li  data-id="9"><span>生鲜水果</span></li>
+                <li  data-id="10"><span>家纺 /家饰 /鲜花</span></li>
+            </ul>
+        </div>
+        <div class="nav_right">
+            <div class="sub hide" data-id="1">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sub hide" data-id="2">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sub hide" data-id="3">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sub hide" data-id="4">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sub hide" data-id="5">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sub hide" data-id="6">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sub hide" data-id="7">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sub hide" data-id="8">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sub hide" data-id="9">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="sub hide" data-id="10">
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">护肤品 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                        <a href="">官方直售</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">彩妆 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                        <a href="">时装彩妆</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">男士护肤 <i>&gt;</i></a></dt>
+                    <dd>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                        <a href="">洁面爽</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    $(function(){
+        $(".container").on("mouseenter",function(){
+            $(".nav_right").removeClass("hide");
+        }).on("mouseleave",function(){
+            $(".nav_right").addClass("hide");
+        }).on("mouseenter","li",function(e){
+            var li_data=$(this).attr("data-id");
+            $(".sub").addClass("hide");
+            $('.sub[data-id="' + li_data + '"]').removeClass('hide');
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        .wrap{
+            width:auto;
+            height:auto;
+        }
+        .header{
+            width:auto;
+            height:auto;
+            background-color:#ddd;
+            margin:0 auto;
+        }
+        .logo{
+            width:1190px;
+            height:50px;
+            background-color:blue;
+            margin:0 auto;
+        }
+        .content{
+            width:1190px;
+            height:1000px;
+            margin:0 auto;
+            margin-top:10px;
+        }
+        .content-1{
+            width:1190px;
+            height:600px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .content-1 .content-1-first{
+            width:780px;
+            height:300px;
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+        }
+        .content-1 .content-1-first .content-1-first-left-top{
+            width:385px;
+            height:145px;
+            background-color:red;
+        }
+        .content-1 .content-1-first .content-1-first-left-bottom{
+            width:385px;
+            height:145px;
+            background-color:red;
+        }
+        .content-1 .content-1-first .content-1-first-right-top{
+            width:385px;
+            height:145px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-first .content-1-first-right-bottom{
+            width:385px;
+            height:145px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-second{
+            width:400px;
+            height:300px;
+            margin-left:10px;
+        }
+        .content-1 .content-1-second .content-1-second-left{
+            width:195px;
+            height:300px;
+            background-color:red;
+            float:left;
+        }
+        .content-1 .content-1-second .content-1-second-right{
+            width:195px;
+            height:300px;
+            background-color:red;
+            float:right;
+        }
+        .content-1 .content-1-third{
+            width:295px;
+            height:180px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-forth{
+            width:295px;
+            height:180px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-fifth{
+            width:295px;
+            height:180px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-sixth{
+            width:295px;
+            height:180px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-seventh{
+            width:390px;
+            height:100px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-eighth{
+            width:390px;
+            height:100px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-1 .content-1-nineth{
+            width:390px;
+            height:100px;
+            background-color:red;
+            margin-top:10px;
+        }
+        .content-2{
+            width:1190px;
+            height:190px;
+            margin-top:10px;
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+        }
+        .content-2 .content-2-first{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+        }
+        .content-2 .content-2-second{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+        }
+        .content-2 .content-2-third{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+        }
+        .content-2 .content-2-forth{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+        }
+        .content-2 .content-2-fifth{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+        }
+        .content-2 .content-2-sixth{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+            margin-top:10px;
+        }
+        .content-2 .content-2-seventh{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+            margin-top:10px;
+        }
+        .content-2 .content-2-eighth{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+            margin-top:10px;
+        }
+        .content-2 .content-2-nineth{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+            margin-top:10px;
+        }
+        .content-2 .content-2-tenth{
+            width:230px;
+            height:90px;
+            background-color:lightgreen;
+            margin-top:10px;
+        }
+        .content-3{
+            width:1190px;
+            height:190px;
+            margin-top:10px;
+            display:flex;
+            flex-wrap: nowrap;
+
+        }
+        .content-3 .content-3-left{
+            width:190px;
+            height:190px;
+            background-color:purple;
+        }
+        .content-3 .content-3-middle{
+            width:790px;
+            height:190px;
+            margin-left:10px;
+        }
+        .content-3 .content-3-middle .content-3-middle-top{
+            width:790px;
+            height:110px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .content-3 .content-3-middle .content-3-middle-top .content-3-middle-top-left{
+            width:260px;
+            height:110px;
+            background-color:purple;
+        }
+        .content-3 .content-3-middle .content-3-middle-top .content-3-middle-top-middle{
+            width:260px;
+            height:110px;
+            background-color:purple;
+        }
+        .content-3 .content-3-middle .content-3-middle-top .content-3-middle-top-right{
+            width:260px;
+            height:110px;
+            background-color:purple;
+        }
+        .content-3 .content-3-middle .content-3-middle-bottom{
+            width:790px;
+            height:70px;
+            margin-top:10px;
+            display: flex;
+        }
+        .content-3 .content-3-middle .content-3-middle-bottom .content-3-middle-bottom-left{
+            width:525px;
+            height:70px;
+            background-color:purple;
+        }
+        .content-3 .content-3-middle .content-3-middle-bottom .content-3-middle-bottom-right{
+            width:260px;
+            height:70px;
+            background-color:purple;
+            margin-left:5px;
+        }
+        .content-3 .content-3-right{
+            width:190px;
+            height:190px;
+            background-color:purple;
+            margin-left:10px;
+        }
+        .footer{
+            width:auto;
+            height:500px;
+            background-color:#ddd;
+            margin-top:10px;
+        }
+        .logo-1{
+            width:1190px;
+            height:500px;
+            margin:0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .logo-1 .logo-1-first{
+            width:880px;
+            height:350px;
+            background-color:lightskyblue;
+        }
+        .logo-1 .logo-1-second{
+            width:300px;
+            height:350px;
+            background-color:lightskyblue;
+        }
+        .logo-1 .logo-1-third{
+            width:195px;
+            height:140px;
+            background-color:lightskyblue;
+            margin-top:10px;
+        }
+        .logo-1 .logo-1-forth{
+            width:195px;
+            height:140px;
+            background-color:lightskyblue;
+            margin-top:10px;
+        }
+        .logo-1 .logo-1-fifth{
+            width:195px;
+            height:140px;
+            background-color:lightskyblue;
+            margin-top:10px;
+        }
+        .logo-1 .logo-1-sixth{
+            width:195px;
+            height:140px;
+            background-color:lightskyblue;
+            margin-top:10px;
+        }
+        .logo-1 .logo-1-seventh{
+            width:195px;
+            height:140px;
+            background-color:lightskyblue;
+            margin-top:10px;
+        }
+        .logo-1 .logo-1-eigth{
+            width:195px;
+            height:140px;
+            background-color:lightskyblue;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo"></div>
+        </div>
+        <div class="content">
+            <div class="content-1">
+                <div class="content-1-first">
+                    <div class="content-1-first-left-top"></div>
+                    <div class="content-1-first-left-bottom"></div>
+                    <div class="content-1-first-right-top"></div>
+                    <div class="content-1-first-right-bottom"></div>
+                </div>
+                <div class="content-1-second">
+                    <div class="content-1-second-left"></div>
+                    <div class="content-1-second-right"></div>
+                </div>
+                <div class="content-1-third"></div>
+                <div class="content-1-forth"></div>
+                <div class="content-1-fifth"></div>
+                <div class="content-1-sixth"></div>
+                <div class="content-1-seventh"></div>
+                <div class="content-1-eighth"></div>
+                <div class="content-1-nineth"></div>
+            </div>
+            <div class="content-2">
+                <div class="content-2-first"></div>
+                <div class="content-2-second"></div>
+                <div class="content-2-third"></div>
+                <div class="content-2-forth"></div>
+                <div class="content-2-fifth"></div>
+                <div class="content-2-sixth"></div>
+                <div class="content-2-seventh"></div>
+                <div class="content-2-eighth"></div>
+                <div class="content-2-nineth"></div>
+                <div class="content-2-tenth"></div>
+            </div>
+            <div class="content-3">
+                <div class="content-3-left"></div>
+                <div class="content-3-middle">
+                    <div class="content-3-middle-top">
+                        <div class="content-3-middle-top-left"></div>
+                        <div class="content-3-middle-top-middle"></div>
+                        <div class="content-3-middle-top-right"></div>
+                    </div>
+                    <div class="content-3-middle-bottom">
+                        <div class="content-3-middle-bottom-left"></div>
+                        <div class="content-3-middle-bottom-right"></div>
+                    </div>
+                </div>
+                <div class="content-3-right"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="logo-1">
+                <div class="logo-1-first"></div>
+                <div class="logo-1-second"></div>
+                <div class="logo-1-third"></div>
+                <div class="logo-1-forth"></div>
+                <div class="logo-1-fifth"></div>
+                <div class="logo-1-sixth"></div>
+                <div class="logo-1-seventh"></div>
+                <div class="logo-1-eigth"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
